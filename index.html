@@ -1,0 +1,680 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>GeM Sahayak - Surety Bonds</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Inter:wght@400;500;600;700&family=Poppins:wght@700&family=Noto+Serif+Devanagari:wght@500;600&family=Noto+Sans+Devanagari:wght@400;500;600;700&family=Noto+Sans+Bengali:wght@400;600&family=Noto+Sans+Gujarati:wght@400;600&family=Noto+Sans+Tamil:wght@400;600&family=Noto+Sans+Telugu:wght@400;600&family=Noto+Sans+Kannada:wght@400;600&family=Noto+Sans+Malayalam:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F6F3EA;
+    --paper-2:#FBF9F3;
+    --wash:#EFEBE0;
+    --ink:#22261E;
+    --ink-2:#5A5F52;
+    --ink-3:#8A8F80;
+    --rule:#DCD6C7;
+    --rule-2:#E7E2D5;
+    --green:#0D7A57;
+    --green-br:#22C58C;
+    --green-wash:#E8F4EE;
+    --coral:#C0504A;
+    --coral-br:#E9635C;
+    --indigo:#5C6BC7;
+    --dk:#242B24;
+    --dk-2:#2C342C;
+    --dk-text:#EFEBE0;
+    --dk-muted:#A2A797;
+    --dk-rule:rgba(239,235,224,.15);
+    --dk-green:#5FE3AC;
+    --dk-coral:#F0837B;
+    --serif:'Newsreader','Noto Serif Devanagari',Georgia,serif;
+    --sans:'Inter','Noto Sans Devanagari','Noto Sans Bengali','Noto Sans Gujarati','Noto Sans Tamil','Noto Sans Telugu','Noto Sans Kannada','Noto Sans Malayalam',system-ui,sans-serif;
+    --r:12px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.62;-webkit-font-smoothing:antialiased}
+  body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:1;opacity:.05;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)'/%3E%3C/svg%3E")}
+  body.lang-indic{line-height:1.76}
+  a{color:inherit;text-decoration:none}
+  button{font-family:inherit}
+  .shell{max-width:1240px;margin:0 auto;padding:0 clamp(18px,2vw,28px)}
+  p{margin:0 0 14px}
+
+  .lbl{display:block;font-size:11.5px;font-weight:600;letter-spacing:.11em;text-transform:uppercase;color:var(--green);margin-bottom:11px}
+  .lang-indic .lbl{letter-spacing:.03em;font-size:12.5px}
+
+  /* HEADER */
+  header.site{position:sticky;top:0;z-index:40;background:rgba(246,243,234,.93);backdrop-filter:blur(10px);border-bottom:1px solid var(--rule)}
+  .nav{max-width:1240px;margin:0 auto;padding:0 clamp(18px,2vw,28px);height:58px;display:flex;align-items:center;gap:20px}
+  .brand{display:flex;align-items:center;gap:9px;flex:0 0 auto}
+  .site-name{font-family:var(--serif);font-size:24px;font-weight:500;letter-spacing:-.014em;color:var(--ink);line-height:1.15;display:block;position:relative;top:3px}
+  .lang-indic .site-name{font-family:var(--sans);font-size:17px;font-weight:600}
+  nav.links{display:flex;gap:22px;margin-left:auto}
+  nav.links a{font-size:13.5px;font-weight:500;color:var(--ink-2);padding:3px 0;border-bottom:1.5px solid transparent;transition:.15s}
+  nav.links a:hover{color:var(--ink)}
+  nav.links a.active{color:var(--green);border-bottom-color:var(--green)}
+  .lang{display:flex;border:1px solid var(--rule);border-radius:8px;overflow:hidden;flex:0 0 auto}
+  .lang button{border:0;background:var(--paper-2);cursor:pointer;padding:6px 11px;font-size:12px;font-weight:700;color:var(--ink-3);transition:.15s}
+  .lang button:hover{color:var(--ink)}
+  .lang button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+  .menu-btn{display:none;background:none;border:0;cursor:pointer;padding:5px}
+  .langbar{position:sticky;top:58px;z-index:39;background:var(--paper);border-bottom:1px solid var(--rule)}
+  .langbar-inner{max-width:1240px;margin:0 auto;padding:0 clamp(18px,2vw,28px);display:flex;gap:2px;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+  .langbar-inner::-webkit-scrollbar{display:none}
+  .langbar button{flex:0 0 auto;border:0;background:none;cursor:pointer;padding:11px 13px;font-size:14px;font-weight:500;color:var(--ink-3);border-bottom:2px solid transparent;transition:.15s;white-space:nowrap;font-family:var(--sans)}
+  .langbar button:hover{color:var(--ink)}
+  .langbar button[aria-pressed="true"]{color:var(--ink);font-weight:700;border-bottom-color:var(--green)}
+
+  /* HERO */
+  .hero{padding-top:clamp(44px,5.4vw,76px);padding-bottom:clamp(40px,4.6vw,60px);position:relative;z-index:2}
+  .hero .lede{margin-bottom:14px}
+  .hero .lead{margin:0}
+  .vfacade{position:relative;display:block;width:100%;aspect-ratio:16/9;padding:0;border:1px solid var(--rule);border-radius:14px;overflow:hidden;cursor:pointer;background:var(--paper-2);box-shadow:0 6px 24px rgba(34,38,30,.07);transition:.2s}
+  .vfacade:hover{border-color:#C7CFBE;box-shadow:0 10px 32px rgba(34,38,30,.12)}
+  .vfacade img{width:100%;height:100%;object-fit:cover;display:block;transition:.3s}
+  .vfacade:hover img{transform:scale(1.02)}
+  .vplay{position:absolute;right:16px;bottom:16px;width:54px;height:54px;border-radius:50%;background:var(--green);display:flex;align-items:center;justify-content:center;box-shadow:0 6px 20px rgba(13,122,87,.34);transition:.2s}
+  .vfacade:hover .vplay{transform:scale(1.09);box-shadow:0 10px 26px rgba(13,122,87,.42)}
+  .vplay svg{margin-left:3px;fill:#fff}
+  .vfacade iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+  h1{font-family:var(--serif);font-weight:400;font-size:clamp(38px,5.6vw,66px);line-height:1.04;letter-spacing:-.018em;margin:0 0 26px}
+  .lang-indic h1{font-weight:500;font-size:clamp(30px,4.2vw,46px);line-height:1.26}
+  h1 .it{font-style:italic;color:var(--green)}
+  .hero .lede{font-size:16.5px;color:var(--ink-2);margin:0;max-width:72ch}
+  .introSplit{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.92fr);gap:clamp(30px,4.4vw,72px);align-items:center;margin-top:6px}
+  .facts{display:flex;flex-direction:column;gap:13px;margin-top:0}
+  .fact{display:flex;gap:14px;align-items:center;background:var(--paper-2);border:1px solid var(--rule);border-radius:11px;padding:16px 19px;transition:.16s}
+  .fact:hover{border-color:#CBC3AE;background:#fff}
+  .fact .fi{flex:0 0 auto;width:32px;height:32px;border-radius:9px;background:var(--green-wash);color:var(--green);display:flex;align-items:center;justify-content:center}
+  .fact .fi svg{width:16px;height:16px}
+  .fact > div{display:flex;flex-wrap:wrap;align-items:baseline;gap:2px 8px;min-width:0}
+  .fact .k{font-family:var(--sans);font-size:15.5px;font-weight:600;color:var(--ink);line-height:1.4}
+  .fact .v{font-size:13px;color:var(--ink-3);margin-top:0;line-height:1.4}
+
+  /* collapsible detail blocks */
+  .acc-2{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:clamp(34px,4vw,52px);align-items:start}
+  .acc{border:1px solid var(--rule);border-radius:var(--r);background:var(--paper-2);overflow:hidden;transition:background .16s,border-color .16s}
+  .acc:hover{border-color:#CBC3AE}
+  .acc[open]{background:#fff;border-color:#CBC3AE;grid-column:1/-1}
+  .acc summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:12px;padding:15px 22px;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ink);transition:.15s}
+  .acc summary::-webkit-details-marker{display:none}
+  .acc summary:hover{color:var(--green)}
+  .lang-indic .acc summary{letter-spacing:.02em;font-size:13.5px;text-transform:none}
+  .acc .chev{margin-left:auto;width:19px;height:19px;border-radius:50%;border:1px solid var(--rule);display:flex;align-items:center;justify-content:center;color:var(--green);transition:.22s;flex:0 0 auto}
+  .acc[open] .chev{transform:rotate(135deg);background:var(--green-wash);border-color:transparent}
+  .accbody{padding:6px 22px 24px}
+  .plist{display:grid;grid-template-columns:repeat(3,1fr)}
+  .plist .party{padding:4px 30px 4px 0;border-top:0;margin-top:0}
+  .plist .party + .party{border-left:1px solid var(--rule-2);padding-left:30px}
+  .plist .tm{font-size:21px;margin:6px 0 8px}
+  .acc .rows{display:grid;grid-template-columns:repeat(3,1fr)}
+  .acc .rows .row{border-bottom:0;padding:4px 30px 4px 0;align-items:flex-start}
+  .acc .rows .row + .row{border-left:1px solid var(--rule-2);padding-left:30px}
+
+  /* SECTIONS */
+  section{position:relative;z-index:2}
+  .sec{padding-top:clamp(28px,3vw,40px);padding-bottom:clamp(44px,5vw,68px);border-top:1px solid var(--rule)}
+  .sec-wash{background:var(--wash);border-bottom:1px solid var(--rule)}
+  .shd{margin-bottom:20px}
+  h2{font-family:var(--serif);font-weight:400;font-size:clamp(28px,3.6vw,40px);line-height:1.1;letter-spacing:-.015em;margin:0 0 10px}
+  .lang-indic h2{font-weight:500;font-size:clamp(23px,2.8vw,30px);line-height:1.32}
+  .lead{font-size:16.5px;color:var(--ink-2);margin:0;max-width:70ch}
+  .introSplit .lead{font-size:18.5px;line-height:1.66;max-width:46ch;color:var(--ink-2)}
+  .lead-full{max-width:none}
+
+  .sub{font-size:11.5px;font-weight:600;letter-spacing:.11em;text-transform:uppercase;color:var(--ink-3);margin:30px 0 14px;padding-bottom:8px;border-bottom:1px solid var(--rule)}
+  .lang-indic .sub{letter-spacing:.02em;font-size:12.5px}
+
+  /* three parties - rule separated, no boxes */
+  .parties{display:grid;grid-template-columns:repeat(3,1fr)}
+  .party{padding:2px 22px 6px 0}
+  .party + .party{border-left:1px solid var(--rule);padding-left:22px}
+  .party .ix{font-size:10.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--green)}
+  .party .tm{font-family:var(--serif);font-size:24px;font-weight:500;line-height:1.2;margin:5px 0 5px}
+  .lang-indic .party .tm{font-family:var(--sans);font-size:18px;font-weight:600}
+  .party .ds{font-size:14.5px;color:var(--ink-2);line-height:1.55}
+
+  .rows{margin-top:2px}
+  .row{display:flex;gap:13px;padding:11px 0;border-bottom:1px solid var(--rule-2);align-items:flex-start}
+  .row .ck{flex:0 0 auto;width:18px;height:18px;border-radius:50%;background:var(--green-wash);color:var(--green);display:flex;align-items:center;justify-content:center;margin-top:2px}
+  .row .tx{font-size:15.5px}
+
+  .note{margin-top:16px;padding:2px 0 2px 20px;border-left:2px solid var(--green)}
+  .note .lb{display:block;font-size:10.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--green);margin-bottom:7px}
+  .note p{font-family:var(--serif);font-style:italic;font-size:clamp(19px,2.2vw,23px);line-height:1.38;color:var(--ink);margin:0}
+  .lang-indic .note p{font-family:var(--sans);font-style:normal;font-size:17px;line-height:1.7;font-weight:500}
+
+  /* figures */
+  .fig .frame{position:relative;background:linear-gradient(168deg,var(--paper-2),#F3EFE4);border:1px solid var(--rule);border-radius:14px;box-shadow:0 10px 34px rgba(34,38,30,.07);aspect-ratio:16/8;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:20px;transition:.16s}
+  .fig .frame::after{content:"";position:absolute;inset:7px;border:1px solid var(--rule-2);border-radius:9px;pointer-events:none}
+  .fig .frame:hover{border-color:var(--ink-3)}
+  .fig .gl{width:52px;height:52px;box-shadow:0 4px 14px rgba(34,38,30,.09);border-radius:50%;background:var(--paper);border:1px solid var(--rule);display:flex;align-items:center;justify-content:center;color:var(--green);margin-bottom:11px}
+  .fig .ft{font-family:var(--serif);font-size:23px;font-weight:500;line-height:1.2}
+  .lang-indic .fig .ft{font-family:var(--sans);font-size:18px;font-weight:600}
+  .fig .fh{font-size:14px;color:var(--ink-3);margin-top:7px;max-width:40ch;line-height:1.5}
+  .fig .cap{display:block;font-size:12.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);margin-top:11px}
+  .lang-indic .fig .cap{letter-spacing:.02em;text-transform:none;font-size:12.5px}
+  .fig-2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .fig{position:relative}
+  .expand{position:absolute;top:12px;right:12px;z-index:4;width:34px;height:34px;border-radius:9px;background:rgba(255,255,255,.94);border:1px solid var(--rule);cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--ink);box-shadow:0 2px 10px rgba(34,38,30,.16);transition:.16s}
+  .expand:hover{background:#fff;transform:scale(1.06);color:var(--green)}
+  .lightbox[hidden]{display:none}
+  .lightbox{position:fixed;inset:0;z-index:100;display:flex;align-items:center;justify-content:center;padding:clamp(10px,2.5vw,36px)}
+  .lb-backdrop{position:absolute;inset:0;background:rgba(16,20,14,.84)}
+  .lb-panel{position:relative;width:min(1500px,97vw);height:min(90vh,940px);background:#14170F;border-radius:14px;overflow:hidden;box-shadow:0 30px 90px rgba(0,0,0,.55);display:flex;flex-direction:column;animation:lbIn .22s cubic-bezier(.3,.8,.3,1)}
+  @keyframes lbIn{from{opacity:0;transform:translateY(10px) scale(.99)}to{opacity:1;transform:none}}
+  .lb-head{flex:0 0 auto;height:46px;display:flex;align-items:center;justify-content:space-between;padding:0 10px 0 18px;background:#1D2118;color:var(--dk-text);font-size:13.5px;font-weight:600;border-bottom:1px solid rgba(255,255,255,.08)}
+  .lb-close{width:34px;height:34px;border-radius:8px;border:0;background:rgba(255,255,255,.08);color:var(--dk-text);cursor:pointer;display:flex;align-items:center;justify-content:center;transition:.15s}
+  .lb-close:hover{background:rgba(255,255,255,.18)}
+  .lb-body{flex:1 1 auto;min-height:0;background:#000}
+  .lb-body iframe{width:100%;height:100%;border:0;display:block}
+  body.lb-open{overflow:hidden}
+
+  .embedbox{position:relative;border:1px solid var(--rule);border-radius:14px;overflow:hidden;box-shadow:0 10px 34px rgba(34,38,30,.08);background:#11130E}
+  .embedbox iframe{position:absolute;inset:0;width:100%;height:100%;border:0;display:block}
+  .embed-video{aspect-ratio:16/9}
+  .embed-deck{aspect-ratio:16/9;background:var(--paper-2)}
+  .figfoot{display:flex;align-items:baseline;justify-content:flex-end;gap:14px;margin-top:11px;flex-wrap:wrap}
+  .figfoot .cap{margin-top:0}
+  .openlink{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600;color:var(--green)}
+  .openlink:hover{text-decoration:underline}
+
+  /* ---------- TIMELINE : dark cards on paper ---------- */
+  .tlcard{background:var(--dk);color:var(--dk-text);border-radius:14px;overflow:hidden;box-shadow:0 3px 18px rgba(34,38,30,.13)}
+  .tlcard + .tlcard{margin-top:16px}
+  .tlbar{display:flex;align-items:center;gap:10px;padding:14px 20px;border-bottom:1px solid var(--dk-rule)}
+  .tlbar .sq{width:9px;height:9px;border-radius:3px;background:var(--ac);flex:0 0 auto}
+  .tlbar .nm{font-size:13.5px;font-weight:600;color:var(--dk-text);letter-spacing:.01em}
+  .tlbar .ct{margin-left:auto;font-size:11px;font-weight:600;color:var(--dk-muted);border:1px solid var(--dk-rule);padding:2px 9px;border-radius:99px;letter-spacing:.04em}
+  .tlbody{padding:24px 20px 0}
+  .tlscroll{overflow-x:auto;padding-bottom:4px}
+  .track{position:relative;display:flex;min-width:600px}
+  .track .base{position:absolute;left:0;right:0;top:8px;height:2px;background:var(--dk-rule)}
+  .track .fill{position:absolute;left:0;top:8px;height:2px;background:var(--ac);transition:width .35s cubic-bezier(.3,.8,.3,1)}
+  .tnode{flex:1;background:none;border:0;cursor:pointer;padding:0 12px 0 0;display:flex;flex-direction:column;align-items:flex-start;gap:12px;text-align:left}
+  .tnode .dotwrap{height:18px;display:flex;align-items:center}
+  .tnode .dot{width:14px;height:14px;border-radius:50%;background:var(--dk);border:2px solid rgba(239,235,224,.3);position:relative;z-index:2;transition:.18s}
+  .tnode:hover .dot{border-color:var(--ac)}
+  .tnode.on .dot{background:var(--ac);border-color:var(--ac);box-shadow:0 0 0 5px var(--acs)}
+  .tnode .no{display:block;font-size:10.5px;font-weight:700;letter-spacing:.1em;color:var(--dk-muted);margin-bottom:3px}
+  .tnode.on .no{color:var(--ac)}
+  .tnode .lb{font-size:12.5px;font-weight:500;color:var(--dk-muted);line-height:1.45;transition:.18s}
+  .tnode:hover .lb{color:var(--dk-text)}
+  .tnode.on .lb{color:var(--dk-text);font-weight:600}
+  .tpanel{margin:22px -20px 0;padding:20px 20px 22px;background:rgba(239,235,224,.045);border-top:1px solid var(--dk-rule);display:grid;grid-template-columns:minmax(0,170px) minmax(0,1fr);gap:22px;animation:rise .3s ease}
+  @keyframes rise{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+  .tpanel .pd{font-size:11.5px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:var(--ac);line-height:1.55}
+  .lang-indic .tpanel .pd{letter-spacing:.01em;text-transform:none;font-size:13px}
+  .tpanel .pt{font-family:var(--serif);font-size:24px;font-weight:500;line-height:1.18;margin:0 0 8px;color:var(--dk-text)}
+  .lang-indic .tpanel .pt{font-family:var(--sans);font-size:19px;font-weight:600;line-height:1.4}
+  .tpanel .pb{font-size:15px;color:var(--dk-muted);margin:0 0 16px;max-width:64ch;line-height:1.6}
+  .dl{display:inline-flex;align-items:center;gap:8px;font-size:12.5px;font-weight:700;color:var(--dk);background:var(--ac);padding:9px 16px;border-radius:7px;transition:.15s}
+  .dl:hover{filter:brightness(1.08);transform:translateY(-1px)}
+  .dl2{display:inline-flex;align-items:center;margin-left:14px;font-size:12.5px;font-weight:600;color:var(--ac);border-bottom:1px solid transparent}
+  .dl2:hover{border-bottom-color:var(--ac)}
+  .docsrc{margin:12px 0 0;font-size:12.5px;color:var(--dk-muted)}
+  .nodoc{margin:0;font-size:13px;color:var(--dk-muted);font-style:italic}
+  .tl-a{--ac:var(--dk-green);--acs:rgba(95,227,172,.16)}
+  .tl-b{--ac:var(--dk-coral);--acs:rgba(240,131,123,.16)}
+
+  /* steps */
+  .steps{display:grid;grid-template-columns:repeat(3,1fr)}
+  .stp{padding:2px 22px 6px 0}
+  .stp + .stp{border-left:1px solid var(--rule);padding-left:22px}
+  .stp .sn{font-family:var(--serif);font-size:38px;font-weight:400;line-height:1;color:var(--green);margin-bottom:10px}
+  .stp .sh{font-family:var(--serif);font-size:21px;font-weight:500;line-height:1.22;margin-bottom:6px}
+  .lang-indic .stp .sh{font-family:var(--sans);font-size:17px;font-weight:600}
+  .stp .sd{font-size:14.5px;color:var(--ink-2);line-height:1.55}
+
+  /* footer */
+  footer{background:var(--dk);color:var(--dk-muted);padding:30px 0 34px;position:relative;z-index:2}
+  footer .fr{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;padding-bottom:18px;border-bottom:1px solid var(--dk-rule)}
+  footer .site-name{color:var(--dk-text)}
+  footer .disc{font-size:12px;line-height:1.65;max-width:70ch;margin:16px 0 0}
+
+  .reveal{opacity:0;transform:translateY(12px);transition:opacity .5s ease,transform .5s ease}
+  .reveal.in{opacity:1;transform:none}
+
+  @media (max-width:860px){
+    .parties,.steps,.fig-2,.acc-2,.introSplit,.plist,.acc .rows{grid-template-columns:1fr}
+    .acc[open]{grid-column:auto}
+    .plist .party + .party,.acc .rows .row + .row{border-left:0;border-top:1px solid var(--rule-2);padding-left:0;padding-top:12px;margin-top:12px}
+    .party + .party,.stp + .stp{border-left:0;border-top:1px solid var(--rule);padding-left:0;padding-top:14px}
+    .tpanel{grid-template-columns:1fr;gap:10px}
+    nav.links{display:none;margin-left:0}
+    nav.links.open{display:flex;position:absolute;top:58px;left:0;right:0;flex-direction:column;gap:0;background:var(--paper);border-bottom:1px solid var(--rule);padding:6px 0}
+    nav.links.open a{padding:11px clamp(16px,2.4vw,30px);border-bottom:0}
+    .menu-btn{display:block}
+    .lang{margin-left:auto}
+  }
+  @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="nav">
+    <a class="brand" href="#top"><span class="site-name">GeM Sahayak</span></a>
+    <nav class="links" id="navLinks">
+      <a href="#s1" data-i18n="overview">Overview</a>
+      <a href="#s3" data-i18n="application_procedure">Application procedure</a>
+      <a href="#s2" data-i18n="regulatory_framework">Regulatory framework</a>
+    </nav>
+    <button class="menu-btn" id="menuBtn" aria-label="Menu">
+      <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="#22261E" stroke-width="1.7" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+  </div>
+</header>
+
+<div class="langbar">
+  <div class="langbar-inner" id="langbar" role="group" aria-label="Language">
+    <button data-lang="en" aria-pressed="true">English</button>
+    <button data-lang="hi" aria-pressed="false">हिंदी</button>
+    <button data-lang="hinglish" aria-pressed="false">Hinglish</button>
+    <button data-lang="bn" aria-pressed="false">বাংলা</button>
+    <button data-lang="mr" aria-pressed="false">मराठी</button>
+    <button data-lang="gu" aria-pressed="false">ગુજરાતી</button>
+    <button data-lang="ta" aria-pressed="false">தமிழ்</button>
+    <button data-lang="te" aria-pressed="false">తెలుగు</button>
+    <button data-lang="kn" aria-pressed="false">ಕನ್ನಡ</button>
+    <button data-lang="ml" aria-pressed="false">മലയാളം</button>
+  </div>
+</div>
+
+<a id="top"></a>
+
+<!-- LANDING + OVERVIEW (merged) -->
+<section id="s1" class="hero shell reveal">
+  <h1 data-i18n-html="h_surety_bonds_on_gem">Surety Bonds <span class="it">on GeM.</span></h1>
+  <div class="introSplit">
+   <div>
+    <p class="lead" data-i18n="an_insurance_surety_bond_is">An Insurance Surety Bond is a collateral-free instrument for meeting the Earnest Money Deposit (EMD) or security requirement of a GeM tender, accepted in place of cash deposits and bank guarantees.</p>
+   </div>
+  <div class="facts">
+    <div class="fact">
+      <span class="fi"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 7.5-2"/></svg></span>
+      <div><span class="k" data-i18n="collateral_free">Collateral-free</span><div class="v" data-i18n="no_margin_money_or_pledged">No margin money or pledged security</div></div>
+    </div>
+    <div class="fact">
+      <span class="fi"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h9M4 12h13M4 17h7"/><circle cx="19" cy="17" r="2.4"/></svg></span>
+      <div><span class="k" data-i18n="three_step_process">Three-step process</span><div class="v" data-i18n="completed_online_on_gem">Completed online on GeM</div></div>
+    </div>
+    <div class="fact">
+      <span class="fi"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5.5c0 4.3-2.9 7.6-7 8.5-4.1-.9-7-4.2-7-8.5V6z"/><path d="M9 12l2 2 4-4"/></svg></span>
+      <div><span class="k" data-i18n="irdai_licensed">IRDAI-licensed</span><div class="v" data-i18n="issued_by_regulated_insurers">Issued by regulated insurers</div></div>
+    </div>
+  </div>
+  </div>
+
+  <div class="acc-2">
+    <details class="acc" open>
+      <summary><span data-i18n="the_three_parties">The three parties</span>
+        <span class="chev"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+      <div class="accbody plist">
+        <div class="party">
+          <span class="ix" data-i18n="i_who_obtains_it">I - Who obtains it</span>
+          <div class="tm" data-i18n="principal">Principal</div>
+          <div class="ds" data-i18n="the_contractor_or_bidder_who">The contractor or bidder who obtains the bond.</div>
+        </div>
+        <div class="party">
+          <span class="ix" data-i18n="ii_who_requires_it">II - Who requires it</span>
+          <div class="tm" data-i18n="obligee">Obligee</div>
+          <div class="ds" data-i18n="the_government_department_or_buyer">The government department or buyer that requires the security.</div>
+        </div>
+        <div class="party">
+          <span class="ix" data-i18n="iii_who_guarantees_it">III - Who guarantees it</span>
+          <div class="tm" data-i18n="surety">Surety</div>
+          <div class="ds" data-i18n="the_irdai_licensed_insurer_that">The IRDAI-licensed insurer that issues the bond and guarantees performance.</div>
+        </div>
+      </div>
+    </details>
+    <details class="acc" open>
+      <summary><span data-i18n="distinction_from_a_bank_guarantee">Distinction from a bank guarantee</span>
+        <span class="chev"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+      <div class="accbody">
+        <div class="rows">
+          <div class="row"><span class="ck"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span><span class="tx" data-i18n="no_collateral_or_margin_money">No collateral or margin money is required.</span></div>
+          <div class="row"><span class="ck"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span><span class="tx" data-i18n="existing_bank_credit_limits_remain">Existing bank credit limits remain unaffected.</span></div>
+          <div class="row"><span class="ck"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span><span class="tx" data-i18n="working_capital_remains_available_for">Working capital remains available for project execution.</span></div>
+        </div>
+      </div>
+    </details>
+  </div>
+
+</section>
+
+<!-- SECTION 2 -->
+<section id="s3" class="sec shell reveal">
+  <div class="shd">
+    <h2 data-i18n="obtaining_a_surety_bond_on">Obtaining a surety bond on GeM</h2>
+    <p class="lead lead-full" data-i18n="the_procedure_is_completed_online">The procedure is completed online in three steps. The walkthrough and accompanying presentation are provided below for reference.</p>
+  </div>
+
+  <div class="fig-2">
+    <div class="fig">
+      <button class="expand" data-lb="video" data-lb-src="22CrEJt8928" data-lb-title="ui_video_title" aria-label="Expand" data-i18n-aria="ui_expand"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></button>
+      <button class="vfacade" data-vid="22CrEJt8928" aria-label="Play the video walkthrough">
+        <img src="https://img.youtube.com/vi/22CrEJt8928/maxresdefault.jpg" alt=""
+             onerror="this.src='https://img.youtube.com/vi/22CrEJt8928/hqdefault.jpg'">
+        <span class="vplay"><svg width="24" height="24" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
+      </button>
+      <div class="figfoot">
+        <a class="openlink" href="https://www.youtube.com/watch?v=22CrEJt8928" target="_blank" rel="noopener">
+          <span data-i18n="watch_on_youtube">Watch on YouTube</span>
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+      </div>
+    </div>
+    <div class="fig">
+      <button class="expand" data-lb="pdf" data-lb-src="how-to-apply.pdf" data-lb-title="ui_deck_title" aria-label="Expand" data-i18n-aria="ui_expand"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></button>
+      <div class="embedbox embed-deck">
+        <iframe src="how-to-apply.pdf#view=FitH&amp;toolbar=1"
+                title="How to Apply for a Surety Bond on GeM - presentation" loading="lazy"></iframe>
+      </div>
+      <div class="figfoot">
+        <a class="openlink" href="how-to-apply.pdf" target="_blank" rel="noopener">
+          <span data-i18n="open_download_presentation">Open / download presentation</span>
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+      </div>
+    </div>
+  </div>
+
+  <p class="sub" data-i18n="the_three_steps">The three steps</p>
+  <div class="steps">
+    <div class="stp">
+      <div class="sn">1</div>
+      <div class="sh" data-i18n="select_and_apply">Select and apply</div>
+      <div class="sd" data-i18n="select_the_insurance_surety_bond">Select the Insurance Surety Bond as the EMD on the GeM bid. GeM verifies the profile and rating, and may request GST or PAN validation.</div>
+    </div>
+    <div class="stp">
+      <div class="sn">2</div>
+      <div class="sh" data-i18n="obtain_a_quote_and_pay">Obtain a quote and pay</div>
+      <div class="sd" data-i18n="insurers_submit_their_quotes_select">Insurers submit their quotes. Select the preferred quote and complete the payment online.</div>
+    </div>
+    <div class="stp">
+      <div class="sn">3</div>
+      <div class="sh" data-i18n="e_sign_and_receive">e-Sign and receive</div>
+      <div class="sd" data-i18n="sign_the_documents_confirm_the">Sign the documents, confirm the details, and the bond is issued.</div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 3 -->
+<section id="s2" class="sec sec-wash">
+  <div class="shell reveal">
+    <div class="shd">
+      <h2 data-i18n="adoption_and_regulatory_basis">Adoption and regulatory basis</h2>
+      <p class="lead lead-full" data-i18n="the_instruments_and_notifications_through">The instruments and notifications through which Insurance Surety Bonds were adopted on GeM, together with the ministries, CPSEs and states that accept them. Select a milestone for details.</p>
+    </div>
+
+    <!-- TIMELINE: ORIGINATION -->
+    <div class="tlcard tl-b">
+      <div class="tlbar">
+        <span class="sq"></span>
+        <span class="nm" data-i18n="origination_regulation_and_documentation">Origination - Regulation &amp; documentation</span>
+        <span class="ct" data-i18n="5_milestones">5 milestones</span>
+      </div>
+      <div class="tlbody">
+        <div class="tlscroll"><div class="track">
+          <span class="base"></span><span class="fill"></span>
+          <button class="tnode on"
+            data-date-en="Feb 2022 · GFR / OM (per GFR 2017)" data-doc="docs/doe-om-gfr-amendment-surety-bonds_2022-02.pdf" data-doc-label="DoE Office Memorandum, 2 Feb 2022" data-doc2="docs/general-financial-rules-2017_2024-07-31.pdf" data-doc2-label="GFR 2017 (updated 31 Jul 2024)" data-date-hi="फ़र॰ 2022 · GFR / OM (GFR 2017)"
+            data-i18n-title="t_general_financial_rules_amendment"
+            data-i18n-brief="b_the_foundational_amendment_to_the">
+            <span class="dotwrap"><span class="dot"></span></span>
+            <span><span class="no">01</span><span class="lb" data-i18n-html="h_feb_2022_gfr_om">Feb 2022 · GFR / OM</span></span>
+          </button>
+          <button class="tnode"
+            data-date-en="Jan 2022 · IRDAI Circular" data-doc="docs/irdai-surety-insurance-contracts-guidelines_2022-01.pdf" data-doc-label="IRDAI/NL/GDL/SIC/01/01/2022, 3 Jan 2022" data-date-hi="जन॰ 2022 · IRDAI परिपत्र"
+            data-i18n-title="t_irdai_enabling_circular"
+            data-i18n-brief="b_irdai_issues_the_framework_allowing">
+            <span class="dotwrap"><span class="dot"></span></span>
+            <span><span class="no">02</span><span class="lb" data-i18n-html="h_jan_2022_irdai_circular">Jan 2022 · IRDAI Circular</span></span>
+          </button>
+          <button class="tnode"
+            data-i18n-date="d_jul_2023_dfs_memos_reminders"
+            data-i18n-title="t_dfs_follow_ups"
+            data-i18n-brief="b_follow_up_memoranda_and_reminders">
+            <span class="dotwrap"><span class="dot"></span></span>
+            <span><span class="no">03</span><span class="lb" data-i18n-html="h_jul_2023_dfs_memos">Jul 2023 · DFS Memos</span></span>
+          </button>
+          <button class="tnode"
+            data-date-en="2024 · IRDAI Circular (revised)" data-doc="docs/irdai-master-circular-general-insurance_2024-06.pdf" data-doc-label="IRDAI Master Circular, Jun 2024" data-date-hi="2024 · IRDAI परिपत्र (संशोधित)"
+            data-i18n-title="t_revised_irdai_guidelines"
+            data-i18n-brief="b_updated_irdai_insurance_guidelines_refining">
+            <span class="dotwrap"><span class="dot"></span></span>
+            <span><span class="no">04</span><span class="lb" data-i18n-html="h_2024_irdai_revised">2024 · IRDAI revised</span></span>
+          </button>
+          <button class="tnode"
+            data-date-en="2024 · DFS + sectoral adoptions" data-doc="docs/dfs-office-memorandum-surety-bonds_2024-09.pdf" data-doc-label="DFS Office Memorandum, 24 Sep 2024" data-date-hi="2024 · DFS + क्षेत्रीय स्वीकृति"
+            data-i18n-title="t_sector_wide_roll_out"
+            data-i18n-brief="b_dfs_along_with_sectoral_adoptions">
+            <span class="dotwrap"><span class="dot"></span></span>
+            <span><span class="no">05</span><span class="lb" data-i18n-html="h_2024_dfs_sectors">2024 · DFS + sectors</span></span>
+          </button>
+        </div></div>
+        <div class="tpanel">
+          <div class="pd"></div>
+          <div>
+            <div class="pt"></div>
+            <p class="pb"></p>
+            <a class="dl" href="#" target="_blank" rel="noopener"><span data-i18n="access_document">Access document</span>
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+            <a class="dl2" href="#" target="_blank" rel="noopener"></a>
+            <p class="docsrc"></p>
+            <p class="nodoc" data-i18n="document_to_be_added">Document to be added.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tlcard tl-a">
+      <div class="tlbar">
+        <span class="sq"></span>
+        <span class="nm" data-i18n="adoption_ministries_cpses_and_states">Adoption - Ministries, CPSEs &amp; States</span>
+        <span class="ct" data-i18n="5_milestones">5 milestones</span>
+      </div>
+      <div class="tlbody">
+        <div class="tlscroll"><div class="track">
+          <span class="base"></span><span class="fill"></span>
+          <button class="tnode on"
+            data-date-en="Sep 2022 · GeM / GIC" data-doc="docs/gem-general-terms-conditions_2024-05.pdf" data-doc-label="GeM General Terms & Conditions, May 2024" data-date-hi="सित॰ 2022 · GeM / GIC"
+            data-i18n-title="t_surety_bonds_go_live_on"
+            data-i18n-brief="b_the_surety_bond_option_is">
+            <span class="dotwrap"><span class="dot"></span></span>
+            <span><span class="no">01</span><span class="lb" data-i18n-html="h_sep_2022_gem_gic">Sep 2022 · GeM / GIC</span></span>
+          </button>
+          <button class="tnode"
+            data-date-en="NHAI" data-doc="docs/pib-nhai-first-surety-bond_2023-11.pdf" data-doc-label="PIB release, 10 Nov 2023" data-date-hi="NHAI"
+            data-i18n-title="t_national_highways_authority_of_india"
+            data-i18n-brief="b_nhai_adopts_surety_bonds_for">
+            <span class="dotwrap"><span class="dot"></span></span>
+            <span><span class="no">02</span><span class="lb" data-i18n-html="h_nhai">NHAI</span></span>
+          </button>
+          <button class="tnode"
+            data-date-en="Coal · Ports · Railways" data-doc="docs/indian-railways-surety-bonds_2025-01.pdf" data-doc-label="Railway Board ACS No. 9, 9 Jan 2025" data-date-hi="कोयला · बंदरगाह · रेलवे"
+            data-i18n-title="t_coal_ports_and_railways"
+            data-i18n-brief="b_adoption_expands_across_the_coal">
+            <span class="dotwrap"><span class="dot"></span></span>
+            <span><span class="no">03</span><span class="lb" data-i18n-html="h_coal_ports_railways">Coal · Ports · Railways</span></span>
+          </button>
+          <button class="tnode"
+            data-date-en="Defence · Telangana · AP" data-doc="docs/andhra-pradesh-financial-code-surety-bonds_2024.pdf" data-doc-label="A.P. G.O.Ms. No. 94, 13 Nov 2024" data-date-hi="रक्षा · तेलंगाना · आं.प्र."
+            data-i18n-title="t_defence_and_state_governments"
+            data-i18n-brief="b_the_ministry_of_defence_and">
+            <span class="dotwrap"><span class="dot"></span></span>
+            <span><span class="no">04</span><span class="lb" data-i18n-html="h_defence_telangana_ap">Defence · Telangana · AP</span></span>
+          </button>
+          <button class="tnode"
+            data-i18n-date="d_delhi"
+            data-i18n-title="t_delhi"
+            data-i18n-brief="b_delhi_adopts_surety_bonds_widening">
+            <span class="dotwrap"><span class="dot"></span></span>
+            <span><span class="no">05</span><span class="lb" data-i18n-html="h_delhi">Delhi</span></span>
+          </button>
+        </div></div>
+        <div class="tpanel">
+          <div class="pd"></div>
+          <div>
+            <div class="pt"></div>
+            <p class="pb"></p>
+            <a class="dl" href="#" target="_blank" rel="noopener"><span data-i18n="access_document">Access document</span>
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+            <a class="dl2" href="#" target="_blank" rel="noopener"></a>
+            <p class="docsrc"></p>
+            <p class="nodoc" data-i18n="document_to_be_added">Document to be added.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <!-- TIMELINE: ADOPTION -->
+
+  </section>
+
+<footer>
+  <div class="shell">
+    <div class="fr">
+      <a class="brand" href="#top"><span class="site-name">GeM Sahayak</span></a>
+      <span style="font-size:12.5px" data-i18n="insurance_surety_bonds_reference_resource">Insurance Surety Bonds · Reference resource</span>
+    </div>
+    <p class="disc" data-i18n="this_website_is_an_educational">This website is an educational awareness resource. It is not owned or maintained by any government authority and does not constitute legal or financial advice.</p>
+  </div>
+</footer>
+
+<div class="lightbox" id="lightbox" hidden>
+  <div class="lb-backdrop" data-lb-close></div>
+  <div class="lb-panel" role="dialog" aria-modal="true" aria-label="Viewer">
+    <div class="lb-head">
+      <span class="lb-title"></span>
+      <button class="lb-close" data-lb-close aria-label="Close" data-i18n-aria="ui_close">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+    <div class="lb-body"></div>
+  </div>
+</div>
+
+<script src="i18n.js?v=20260907111628"></script>
+<script>
+(function(){
+  var lang='en';
+  var INDIC={hi:1,bn:1,mr:1,gu:1,ta:1,te:1,kn:1,ml:1};
+  // look up a key in the active language, falling back to English
+  function t(key){
+    if(!key) return '';
+    var d=window.I18N&&window.I18N[lang];
+    if(d&&d[key]!==undefined) return d[key];
+    var en=window.I18N&&window.I18N.en;
+    return (en&&en[key]!==undefined)?en[key]:'';
+  }
+  function fill(tl,node){
+    tl.querySelector('.pd').textContent=t(node.dataset.i18nDate);
+    tl.querySelector('.pt').textContent=t(node.dataset.i18nTitle);
+    tl.querySelector('.pb').textContent=t(node.dataset.i18nBrief);
+    var d1=node.dataset.doc, d2=node.dataset.doc2;
+    var a1=tl.querySelector('.dl'), a2=tl.querySelector('.dl2'),
+        src=tl.querySelector('.docsrc'), nod=tl.querySelector('.nodoc');
+    if(d1){
+      a1.href=d1; a1.style.display=''; nod.style.display='none';
+      src.textContent=node.dataset.docLabel||''; src.style.display=node.dataset.docLabel?'':'none';
+      if(d2){ a2.href=d2; a2.textContent=node.dataset.doc2Label||'Related document'; a2.style.display=''; }
+      else { a2.style.display='none'; }
+    } else {
+      a1.style.display='none'; a2.style.display='none'; src.style.display='none'; nod.style.display='';
+    }
+    var nodes=[].slice.call(tl.querySelectorAll('.tnode'));
+    tl.querySelector('.fill').style.width=(((nodes.indexOf(node)+0.5)/nodes.length)*100)+'%';
+  }
+  document.querySelectorAll('.tlcard').forEach(function(tl){
+    var nodes=[].slice.call(tl.querySelectorAll('.tnode'));
+    nodes.forEach(function(n){n.addEventListener('click',function(){
+      nodes.forEach(function(x){x.classList.remove('on')});
+      n.classList.add('on');
+      var p=tl.querySelector('.tpanel');p.style.animation='none';p.offsetHeight;p.style.animation='';
+      fill(tl,n);
+    })});
+    fill(tl,nodes[0]);
+  });
+  function setLang(l){
+    if(!window.I18N||!window.I18N[l]) l='en';
+    lang=l;
+    document.documentElement.lang = (l==='hinglish') ? 'en' : l;
+    document.body.classList.toggle('lang-indic', !!INDIC[l]);
+    document.querySelectorAll('[data-i18n]').forEach(function(el){
+      el.textContent=t(el.getAttribute('data-i18n'));
+    });
+    document.querySelectorAll('[data-i18n-html]').forEach(function(el){
+      el.innerHTML=t(el.getAttribute('data-i18n-html'));
+    });
+    document.querySelectorAll('[data-i18n-aria]').forEach(function(el){
+      el.setAttribute('aria-label', t(el.getAttribute('data-i18n-aria')));
+    });
+    document.querySelectorAll('.tlcard').forEach(function(tl){
+      var on=tl.querySelector('.tnode.on'); if(on) fill(tl,on);
+    });
+    document.querySelectorAll('#langbar button').forEach(function(b){
+      b.setAttribute('aria-pressed', String(b.getAttribute('data-lang')===l));
+    });
+    try{localStorage.setItem('gs-lang',l)}catch(e){}
+  }
+  document.querySelectorAll('#langbar button').forEach(function(b){
+    b.addEventListener('click',function(){ setLang(b.getAttribute('data-lang')); });
+  });
+  try{ var saved=localStorage.getItem('gs-lang'); if(saved && saved!=='en') setLang(saved); }catch(e){}
+  // YouTube refuses to embed on file:// (error 153) - open it directly in that case
+  var canEmbed = location.protocol === 'http:' || location.protocol === 'https:';
+  document.querySelectorAll('.vfacade').forEach(function(vf){
+    var id = vf.getAttribute('data-vid');
+    vf.addEventListener('click', function(e){
+      e.preventDefault();
+      if(!canEmbed){ window.open('https://www.youtube.com/watch?v='+id,'_blank','noopener'); return; }
+      vf.innerHTML = '<iframe src="https://www.youtube-nocookie.com/embed/'+id+'?autoplay=1&rel=0" title="How to Apply for a Surety Bond on GeM" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>';
+      vf.style.cursor='default';
+      vf.classList.add('playing');
+    });
+  });
+
+  // ---- expand video / deck into a large in-page viewer ----
+  var lb=document.getElementById('lightbox'),
+      lbBody=lb.querySelector('.lb-body'),
+      lbTitle=lb.querySelector('.lb-title');
+  function lbOpen(type,src,titleKey){
+    if(type==='video'){
+      if(!canEmbed){ window.open('https://www.youtube.com/watch?v='+src,'_blank','noopener'); return; }
+      lbBody.innerHTML='<iframe src="https://www.youtube-nocookie.com/embed/'+src+'?autoplay=1&rel=0" '+
+        'allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" '+
+        'referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>';
+    } else {
+      lbBody.innerHTML='<iframe src="'+src+'#view=FitH"></iframe>';
+    }
+    lbTitle.textContent=t(titleKey);
+    lb.hidden=false; document.body.classList.add('lb-open');
+    lb.querySelector('.lb-close').focus();
+  }
+  function lbClose(){ lbBody.innerHTML=''; lb.hidden=true; document.body.classList.remove('lb-open'); }
+  document.querySelectorAll('.expand').forEach(function(b){
+    b.addEventListener('click',function(e){ e.preventDefault();
+      lbOpen(b.getAttribute('data-lb'), b.getAttribute('data-lb-src'), b.getAttribute('data-lb-title'));
+    });
+  });
+  lb.querySelectorAll('[data-lb-close]').forEach(function(x){ x.addEventListener('click',lbClose); });
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape' && !lb.hidden) lbClose(); });
+
+  var mb=document.getElementById('menuBtn'),nl=document.getElementById('navLinks');
+  mb.addEventListener('click',function(){nl.classList.toggle('open')});
+  nl.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){nl.classList.remove('open')})});
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.06});
+  document.querySelectorAll('.reveal').forEach(function(el){io.observe(el)});
+  var links=[].slice.call(document.querySelectorAll('nav.links a'));
+  var spy=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){links.forEach(function(l){l.classList.toggle('active',l.getAttribute('href')==='#'+e.target.id)})}})},{rootMargin:'-45% 0px -50% 0px'});
+  document.querySelectorAll('section[id]').forEach(function(s){spy.observe(s)});
+})();
+</script>
+</body>
+</html>
