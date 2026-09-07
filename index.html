@@ -626,7 +626,11 @@
   document.querySelectorAll('#langbar button').forEach(function(b){
     b.addEventListener('click',function(){ setLang(b.getAttribute('data-lang')); });
   });
-  try{ var saved=localStorage.getItem('gs-lang'); if(saved && saved!=='en') setLang(saved); }catch(e){}
+  var saved='en';
+  try{ saved=localStorage.getItem('gs-lang')||'en'; }catch(e){}
+  // always render from the dictionary so it is the single source of truth;
+  // the text sitting in the HTML is only a no-JS fallback and can go stale.
+  setLang(saved);
   // YouTube refuses to embed on file:// (error 153) - open it directly in that case
   var canEmbed = location.protocol === 'http:' || location.protocol === 'https:';
   document.querySelectorAll('.vfacade').forEach(function(vf){
