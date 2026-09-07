@@ -116,6 +116,17 @@
   .acc .rows .row{border-bottom:0;padding:4px 30px 4px 0;align-items:flex-start}
   .acc .rows .row + .row{border-left:1px solid var(--rule-2);padding-left:30px}
 
+  /* FAQ */
+  .faqlist{display:grid;gap:9px;margin-top:clamp(18px,2vw,26px)}
+  .faqlist .acc summary{text-transform:none;letter-spacing:0;font-size:15px;font-weight:600;line-height:1.45;align-items:flex-start;padding:16px 22px;gap:14px}
+  .lang-indic .faqlist .acc summary{font-size:14.5px;font-weight:600}
+  .faqlist .qn{font-family:var(--serif);font-size:13px;font-weight:500;color:var(--green);flex:0 0 auto;padding-top:1px;letter-spacing:.03em}
+  .faqlist .accbody{padding:2px 40px 24px 56px}
+  .fa{font-size:14.8px;line-height:1.75;color:var(--ink-2);margin:0;max-width:92ch}
+  .falist{list-style:none;margin:11px 0 0;padding:0;display:grid;gap:7px}
+  .falist li{position:relative;padding-left:16px;font-size:14.3px;line-height:1.6;color:var(--ink-2)}
+  .falist li:before{content:'';position:absolute;left:0;top:9px;width:5px;height:5px;border-radius:50%;background:var(--green)}
+
   /* SECTIONS */
   section{position:relative;z-index:2}
   .sec{padding-top:clamp(28px,3vw,40px);padding-bottom:clamp(44px,5vw,68px);border-top:1px solid var(--rule)}
@@ -260,6 +271,7 @@
     .parties,.steps,.fig-2,.acc-2,.introSplit,.plist,.acc .rows,.critlist,.steps-6{grid-template-columns:1fr}
     .steps-6 .stp:nth-child(n+4){border-top:0;padding-top:0}
     .acc[open]{grid-column:auto}
+    .faqlist .accbody{padding:2px 20px 22px 22px}
     .plist .party + .party,.acc .rows .row + .row{border-left:0;border-top:1px solid var(--rule-2);padding-left:0;padding-top:12px;margin-top:12px}
     .party + .party,.stp + .stp{border-left:0;border-top:1px solid var(--rule);padding-left:0;padding-top:14px}
     .tpanel{grid-template-columns:1fr;gap:10px}
@@ -281,6 +293,7 @@
       <a href="#s1" data-i18n="overview">Overview</a>
       <a href="#s3" data-i18n="application_procedure">Application procedure</a>
       <a href="#s2" data-i18n="regulatory_framework">Regulatory framework</a>
+      <a href="#s4" data-i18n="nav_faq">Questions</a>
     </nav>
     <button class="menu-btn" id="menuBtn" aria-label="Menu">
       <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="#22261E" stroke-width="1.7" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
@@ -609,6 +622,88 @@
 
   </section>
 
+<!-- SECTION 4 -->
+<section id="s4" class="sec shell reveal">
+  <div class="shd">
+    <h2 data-i18n="faq_h">Questions we are asked</h2>
+    <p class="lead lead-full" data-i18n="faq_lead"></p>
+  </div>
+  <div class="faqlist">
+    <details class="acc">
+      <summary><span class="qn">01</span><span data-i18n="faq_q1"></span><span class="chev"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+      <div class="accbody"><p class="fa" data-i18n="faq_a1"></p></div>
+    </details>
+    <details class="acc">
+      <summary><span class="qn">02</span><span data-i18n="faq_q2"></span><span class="chev"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+      <div class="accbody"><p class="fa" data-i18n="faq_a2"></p></div>
+    </details>
+    <details class="acc">
+      <summary><span class="qn">03</span><span data-i18n="faq_q3"></span><span class="chev"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+      <div class="accbody"><p class="fa" data-i18n="faq_a3"></p></div>
+    </details>
+    <details class="acc">
+      <summary><span class="qn">04</span><span data-i18n="faq_q4"></span><span class="chev"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+      <div class="accbody"><p class="fa" data-i18n="faq_a4"></p></div>
+    </details>
+    <details class="acc">
+      <summary><span class="qn">05</span><span data-i18n="faq_q5"></span><span class="chev"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+      <div class="accbody"><p class="fa" data-i18n="faq_a5"></p></div>
+    </details>
+    <details class="acc">
+      <summary><span class="qn">06</span><span data-i18n="faq_q6"></span><span class="chev"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+      <div class="accbody"><p class="fa" data-i18n="faq_a6"></p></div>
+    </details>
+    <details class="acc">
+      <summary><span class="qn">07</span><span data-i18n="faq_q7"></span><span class="chev"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+      <div class="accbody"><p class="fa" data-i18n="faq_a7"></p></div>
+    </details>
+    <details class="acc">
+      <summary><span class="qn">08</span><span data-i18n="faq_q8"></span><span class="chev"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+      <div class="accbody"><p class="fa" data-i18n="faq_a8"></p></div>
+    </details>
+    <details class="acc">
+      <summary><span class="qn">09</span><span data-i18n="faq_q9"></span><span class="chev"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+      <div class="accbody"><p class="fa" data-i18n="faq_a9"></p><ul class="falist"><li data-i18n="faq_a9_1"></li><li data-i18n="faq_a9_2"></li><li data-i18n="faq_a9_3"></li><li data-i18n="faq_a9_4"></li><li data-i18n="faq_a9_5"></li><li data-i18n="faq_a9_6"></li></ul><p class="fa" data-i18n="faq_a9_note" style="margin-top:12px"></p></div>
+    </details>
+    <details class="acc">
+      <summary><span class="qn">10</span><span data-i18n="faq_q10"></span><span class="chev"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+      <div class="accbody"><p class="fa" data-i18n="faq_a10"></p></div>
+    </details>
+    <details class="acc">
+      <summary><span class="qn">11</span><span data-i18n="faq_q11"></span><span class="chev"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+      <div class="accbody"><p class="fa" data-i18n="faq_a11"></p></div>
+    </details>
+    <details class="acc">
+      <summary><span class="qn">12</span><span data-i18n="faq_q12"></span><span class="chev"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+      <div class="accbody"><p class="fa" data-i18n="faq_a12"></p></div>
+    </details>
+    <details class="acc">
+      <summary><span class="qn">13</span><span data-i18n="faq_q13"></span><span class="chev"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+      <div class="accbody"><p class="fa" data-i18n="faq_a13"></p></div>
+    </details>
+    <details class="acc">
+      <summary><span class="qn">14</span><span data-i18n="faq_q14"></span><span class="chev"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+      <div class="accbody"><p class="fa" data-i18n="faq_a14"></p></div>
+    </details>
+    <details class="acc">
+      <summary><span class="qn">15</span><span data-i18n="faq_q15"></span><span class="chev"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+      <div class="accbody"><p class="fa" data-i18n="faq_a15"></p></div>
+    </details>
+    <details class="acc">
+      <summary><span class="qn">16</span><span data-i18n="faq_q16"></span><span class="chev"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+      <div class="accbody"><p class="fa" data-i18n="faq_a16"></p></div>
+    </details>
+    <details class="acc">
+      <summary><span class="qn">17</span><span data-i18n="faq_q17"></span><span class="chev"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+      <div class="accbody"><p class="fa" data-i18n="faq_a17"></p></div>
+    </details>
+    <details class="acc">
+      <summary><span class="qn">18</span><span data-i18n="faq_q18"></span><span class="chev"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+      <div class="accbody"><p class="fa" data-i18n="faq_a18"></p></div>
+    </details>
+  </div>
+</section>
+
 <footer>
   <div class="shell">
     <div class="fr">
@@ -632,7 +727,7 @@
   </div>
 </div>
 
-<script src="i18n.js?v=20260907151722"></script>
+<script src="i18n.js?v=20260907161433"></script>
 <script>
 (function(){
   var lang='en';
