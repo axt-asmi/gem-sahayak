@@ -230,6 +230,21 @@
   .stp .sh{font-family:var(--serif);font-size:21px;font-weight:500;line-height:1.22;margin-bottom:6px}
   .lang-indic .stp .sh{font-family:var(--sans);font-size:17px;font-weight:600}
   .stp .sd{font-size:14.5px;color:var(--ink-2);line-height:1.55}
+  .steps-6{grid-template-columns:repeat(3,1fr);gap:0 0}
+  .steps-6 .stp:nth-child(-n+3){padding-bottom:22px}
+  .steps-6 .stp:nth-child(n+4){border-top:1px solid var(--rule);padding-top:22px}
+  .steps-6 .stp:nth-child(3n+1){border-left:0;padding-left:0}
+  .acc-wide{grid-column:1/-1;margin-bottom:clamp(20px,2.4vw,30px)}
+  .critlead{font-size:15.5px;color:var(--ink);margin:0 0 14px;font-weight:500}
+  .critlist{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,1fr);gap:10px 30px}
+  .critlist li{position:relative;padding-left:26px;font-size:15px;color:var(--ink-2);line-height:1.55}
+  .critlist li::before{content:"";position:absolute;left:0;top:8px;width:7px;height:7px;border-radius:50%;background:var(--green)}
+  .critnote{font-size:12.5px;color:var(--ink-3);margin:16px 0 0;line-height:1.55;font-style:italic}
+  .afterbox{margin-top:clamp(24px,3vw,34px);background:var(--green-wash);border:1px solid #C8EFDE;border-radius:var(--r);padding:20px 22px}
+  .afterbox .lb{display:block;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--green);margin-bottom:12px}
+  .lang-indic .afterbox .lb{letter-spacing:.02em;font-size:13px;text-transform:none}
+  .afterbox .critlist li{color:#14503C}
+  .afterbox .critlist li::before{background:var(--green)}
 
   /* footer */
   footer{background:var(--dk);color:var(--dk-muted);padding:30px 0 34px;position:relative;z-index:2}
@@ -241,7 +256,8 @@
   .reveal.in{opacity:1;transform:none}
 
   @media (max-width:860px){
-    .parties,.steps,.fig-2,.acc-2,.introSplit,.plist,.acc .rows{grid-template-columns:1fr}
+    .parties,.steps,.fig-2,.acc-2,.introSplit,.plist,.acc .rows,.critlist,.steps-6{grid-template-columns:1fr}
+    .steps-6 .stp:nth-child(n+4){border-top:0;padding-top:0}
     .acc[open]{grid-column:auto}
     .plist .party + .party,.acc .rows .row + .row{border-left:0;border-top:1px solid var(--rule-2);padding-left:0;padding-top:12px;margin-top:12px}
     .party + .party,.stp + .stp{border-left:0;border-top:1px solid var(--rule);padding-left:0;padding-top:14px}
@@ -383,23 +399,62 @@
     </div>
   </div>
 
-  <p class="sub" data-i18n="the_three_steps">The three steps</p>
-  <div class="steps">
+  <details class="acc acc-wide" open>
+    <summary><span data-i18n="before_you_start">Before you start</span>
+      <span class="chev"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+    <div class="accbody">
+      <p class="critlead" data-i18n="fastpath_intro"></p>
+      <ul class="critlist">
+        <li data-i18n="crit_entity"></li>
+        <li data-i18n="crit_buyer"></li>
+        <li data-i18n="crit_emd"></li>
+        <li data-i18n="crit_deadline"></li>
+      </ul>
+      <p class="critnote" data-i18n="fastpath_note"></p>
+    </div>
+  </details>
+
+  <p class="sub" data-i18n="the_three_steps">The six steps</p>
+  <div class="steps steps-6">
     <div class="stp">
       <div class="sn">1</div>
-      <div class="sh" data-i18n="select_and_apply">Select and apply</div>
-      <div class="sd" data-i18n="select_the_insurance_surety_bond">Select the Insurance Surety Bond as the EMD on the GeM bid. GeM verifies the profile and rating, and may request GST or PAN validation.</div>
+      <div class="sh" data-i18n="step_find_your_bid_t"></div>
+      <div class="sd" data-i18n="step_find_your_bid_d"></div>
     </div>
     <div class="stp">
       <div class="sn">2</div>
-      <div class="sh" data-i18n="obtain_a_quote_and_pay">Obtain a quote and pay</div>
-      <div class="sd" data-i18n="insurers_submit_their_quotes_select">Insurers submit their quotes. Select the preferred quote and complete the payment online.</div>
+      <div class="sh" data-i18n="step_choose_surety_bond_t"></div>
+      <div class="sd" data-i18n="step_choose_surety_bond_d"></div>
     </div>
     <div class="stp">
       <div class="sn">3</div>
-      <div class="sh" data-i18n="e_sign_and_receive">e-Sign and receive</div>
-      <div class="sd" data-i18n="sign_the_documents_confirm_the">Sign the documents, confirm the details, and the bond is issued.</div>
+      <div class="sh" data-i18n="step_consent_and_details_t"></div>
+      <div class="sd" data-i18n="step_consent_and_details_d"></div>
     </div>
+    <div class="stp">
+      <div class="sn">4</div>
+      <div class="sh" data-i18n="step_quote_and_payment_t"></div>
+      <div class="sd" data-i18n="step_quote_and_payment_d"></div>
+    </div>
+    <div class="stp">
+      <div class="sn">5</div>
+      <div class="sh" data-i18n="step_esign_documents_t"></div>
+      <div class="sd" data-i18n="step_esign_documents_d"></div>
+    </div>
+    <div class="stp">
+      <div class="sn">6</div>
+      <div class="sh" data-i18n="step_bond_issued_t"></div>
+      <div class="sd" data-i18n="step_bond_issued_d"></div>
+    </div>
+  </div>
+
+  <div class="afterbox">
+    <span class="lb" data-i18n="after_issuance">After issuance</span>
+    <ul class="critlist">
+      <li data-i18n="after_1"></li>
+      <li data-i18n="after_2"></li>
+      <li data-i18n="after_3"></li>
+    </ul>
   </div>
 </section>
 
@@ -560,7 +615,7 @@
   </div>
 </div>
 
-<script src="i18n.js?v=20260907111628"></script>
+<script src="i18n.js?v=20260907130430"></script>
 <script>
 (function(){
   var lang='en';
